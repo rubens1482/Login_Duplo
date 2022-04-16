@@ -21,9 +21,22 @@
 		$stmt->execute(array(":user_id"=>$user_id));
 		// $UserRow: variavel utilizada para trazer os dados do usuario logado e mostrado na navbar
 		$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
+
+		// retornar os dados da conta
+		
+		$account = $_SESSION['account_session'];
+		require_once 'class/class.account.php';
+		$auth_account = new ACCOUNT();
+		$stmt = $auth_account->SqlQuery("SELECT * FROM lc_contass WHERE conta=:conta");
+		$stmt->execute(array(":conta"=>$account));
+		
+		$accountRow=$stmt->fetch(PDO::FETCH_ASSOC);
+		
+		$contapd = $accountRow['idconta'];
+		$name = $accountRow['proprietario'];
 	}
+	/*
 	
-	require_once 'class/class.account.php';
 	$contalogada = new ACCOUNT();
 	
 	// if user session is not active(not loggedin) this page will help 'home.php and profile.php' to redirect to login page
@@ -34,19 +47,13 @@
 		// session no set redirects to login page
 		$contalogada->redirect('login_c.php');
 	} else {
-		$auth_account = new ACCOUNT();
+		
 	
 		$account_id = $_SESSION['account_session'];
 		
-		$stmt = $auth_account->SqlQuery("SELECT * FROM lc_contass WHERE idconta=:idconta");
-		$stmt->execute(array(":idconta"=>$account_id));
 		
-		$accountRow=$stmt->fetch(PDO::FETCH_ASSOC);
-		
-		$contapd = $accountRow['idconta'];
-		$name = $accountRow['proprietario'];
 	}
-	
+	*/
 	require_once 'class/class.lancamentos.php';
 	$session = new MOVS();
 	

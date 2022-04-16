@@ -144,7 +144,14 @@ require_once "config/config_user.php";
 					<span class="input-group-addon"><i class="fa fa-lock"></i></span>
 					<input type="password" class="form-control" name="txt_password" placeholder="Password" required="required">
 				</div>
-			</div> 
+			</div>
+			<!-- CAMPO FORMULÁRIO LOGIN - CONTA  -->
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+					<input type="text" class="form-control" name="txt_account" placeholder="account" required="required">
+				</div>
+			</div>
 			<!-- BOTÃO SUBMIT PARA LOGIN NO SISTEMA  -->			
 			<div class="form-group">
 				<button type="submit" name="btn-login" class="btn btn-primary login-btn btn-block">Sign in</button>

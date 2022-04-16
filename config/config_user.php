@@ -12,16 +12,28 @@ if(isset($_POST['btn-login']))
 		$uname = strip_tags($_POST['txt_uname_email']);
 		$umail = strip_tags($_POST['txt_uname_email']);
 		$upass = strip_tags($_POST['txt_password']);
+		$account = strip_tags($_POST['txt_account']);
 			
 		if($login->doLogin($uname,$umail,$upass))
 		{
-			$status = "Login Success !";
+			require_once("class/class.account.php");
+			$loginconta = new ACCOUNT;
+			
+			$sql = $loginconta->SqlQuery("SELECT * from lc_contass WHERE conta=:account");
+			$sql->execute(array(":account"=>$account));
+			$dados=$sql->fetch(PDO::FETCH_ASSOC);
+			if($sql->rowCount() == 1) {
+				$_SESSION['account_session'] = $dados['conta'];
+				$_SESSION['account_id'] = $dados['idconta'];
+				$loginconta->redirect('index.php');	
+			} else {
+				$status = "Conta inexistente!";
+			}
 
-			$login->redirect('index.php');	
 		}
 		else
 		{
-			$status = "Dados Incorretos !";
+			$status = "Login ou Senha Incorretos !";
 		}	
 	}
 // SE FOI ENVIADO O BOTÃO btn-recover QUE SERVE PARA RECUPERAR A SENHA
