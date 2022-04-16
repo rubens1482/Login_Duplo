@@ -137,7 +137,7 @@ function mascara_cpf(cpf)
 				<span class="icon-bar"> vamos </span>
 				<span class="icon-bar"> terá </span>
 			  </button>
-			  <a class="navbar-brand" href="http://www.localhost/Login-Signup-Pdo/index.php">Livro Caixa <?php print $accountRow['conta'] ?></a>
+			  <a class="navbar-brand" href="http://www.localhost/Login/index.php">Livro Caixa <?php print $accountRow['conta'] ?></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse" >
 				<ul class="nav navbar-nav">

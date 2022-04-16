@@ -57,7 +57,6 @@ class USER
 				{
 					$_SESSION['user_session'] = $userRow['user_id'];
 					$_SESSION['user_mail'] = $userRow['user_email'];
-					
 					return true;
 				}
 				else

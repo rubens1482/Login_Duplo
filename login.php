@@ -86,7 +86,7 @@ require_once "config/config_user.php";
 			{
 				?>
 				<div class="alert alert-danger">
-				   <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $status; ?> !
+				   <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $status; ?>
 				</div>
 				<?php
 			}
@@ -125,7 +125,7 @@ require_once "config/config_user.php";
 					{
 						?>
 						<div class="alert alert-danger">
-						   <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $status; ?> !
+						   <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $status; ?>
 						</div>
 						<?php
 					}

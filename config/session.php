@@ -15,12 +15,11 @@
 	} else {
 		// VARIAVEL DE SESSÃO DO USUARIO
 		//$auth_user = new USER();
-		
 		$user_id = $_SESSION['user_session'];
 		
 		$stmt = $userlogado->runQuery("SELECT * FROM users WHERE user_id=:user_id");
 		$stmt->execute(array(":user_id"=>$user_id));
-		
+		// $UserRow: variavel utilizada para trazer os dados do usuario logado e mostrado na navbar
 		$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 	}
 	

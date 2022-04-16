@@ -20,7 +20,7 @@ if(isset($_POST['btn-login']))
 	}
 	else
 	{
-		$status = "Dados Incorretos !";
+		$status = "Login ou Senha Incorretos !";
 	}	
 }
 ?>
