@@ -94,12 +94,7 @@ require_once "config/config_account.php";
                 <input type="text" class="form-control" name="txt_account_email" placeholder="Account Name" required="required">				
             </div>
         </div>
-		<div class="form-group">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                <input type="password" class="form-control" name="txt_password" placeholder="Password Account" required="required">				
-            </div>
-        </div>        
+		
         <div class="form-group">
             <button type="submit" name="btn-login" class="btn btn-primary login-btn btn-block">Sign in</button>
         </div>
